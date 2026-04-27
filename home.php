@@ -1,6 +1,6 @@
 <?php
 /**
- * WattWise - Modern Landing Page (Voltz Inspired Design)
+ * PowerVision - Modern Landing Page (Voltz Inspired Design)
  */
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WattWise — Energy Tracking Made Simple</title>
+<title>PowerVision — Energy Tracking Made Simple</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -581,7 +581,7 @@ body {
 
 <nav class="floating-nav">
     <div class="nav-links">
-        <span class="logo">WattWise</span>
+        <span class="logo">PowerVision</span>
         <a href="#mission">Mission</a>
         <a href="#impact">Features</a>
         <a href="#how-it-works">How it Works</a>
@@ -601,7 +601,7 @@ body {
             <div>
                 <img src="images/smarthome.avif" alt="Home Energy" class="img-1">
                 <p class="quote-text">"We believe understanding your energy usage is the first step toward a sustainable world."</p>
-                <p class="quote-author">WattWise Team</p>
+                <p class="quote-author">PowerVision Team</p>
             </div>
             <div>
                 <img src="images/hero.jpeg" alt="Smart Home" class="img-2">
@@ -609,7 +609,7 @@ body {
         </div>
     </div>
     <div class="mission-right reveal delay-1">
-        <h2>WattWise exists to make your electricity usage transparent, measurable, and easy to manage. Because true sustainability starts right in your own home.</h2>
+        <h2>PowerVision exists to make your electricity usage transparent, measurable, and easy to manage. Because true sustainability starts right in your own home.</h2>
     </div>
 </section>
 
@@ -650,7 +650,7 @@ body {
         </div>
         
         <div class="testimonial reveal delay-1">
-            <p>"WattWise made it incredibly simple to find out which appliances were spiking my electricity bill. Now I know exactly where my money goes."</p>
+            <p>"PowerVision made it incredibly simple to find out which appliances were spiking my electricity bill. Now I know exactly where my money goes."</p>
             <div class="author">
                 <div class="author-img"></div>
                 <div class="author-info">
@@ -681,7 +681,7 @@ body {
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-brand">
-            <h2>WattWise</h2>
+            <h2>PowerVision</h2>
             <p>Empowering households to achieve SDG 7 through transparent and accessible energy tracking.</p>
         </div>
         <div class="footer-links">
@@ -701,7 +701,7 @@ body {
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; <?php echo date("Y"); ?> WattWise. All rights reserved.</p>
+        <p>&copy; <?php echo date("Y"); ?> PowerVision. All rights reserved.</p>
         <p>Built for Sustainable Development Goal 7</p>
     </div>
 </footer>

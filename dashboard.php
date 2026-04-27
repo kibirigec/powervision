@@ -55,7 +55,7 @@ $logs = $stmt_logs->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - WattWise</title>
+    <title>Dashboard - PowerVision</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Dashboard specific Voltz-style components */
@@ -131,7 +131,7 @@ $logs = $stmt_logs->get_result();
 </head>
 <body>
     <nav>
-        <h1>WattWise</h1>
+        <h1>PowerVision</h1>
         <div>
             <a href="dashboard.php" style="color: var(--primary);">Dashboard</a>
             <a href="add_appliance.php">Appliances</a>
