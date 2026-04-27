@@ -6,13 +6,15 @@
  * We use the MySQLi extension which is beginner-friendly and built into PHP.
  */
 
-$host = "localhost";
-$username = "root";
-$password = ""; // Default XAMPP/WAMP password is empty
-$dbname = "electricity_tracker";
+// Database configuration with fallback for local XAMPP vs Live Server (Railway)
+$host = getenv('MYSQLHOST') ?: 'localhost';
+$user = getenv('MYSQLUSER') ?: 'root';
+$pass = getenv('MYSQLPASSWORD') ?: '';
+$db = getenv('MYSQLDATABASE') ?: 'electricity_tracker';
+$port = getenv('MYSQLPORT') ?: 3306;
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
+// Create connection using the port
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 // Check connection
 if ($conn->connect_error) {
