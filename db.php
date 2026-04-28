@@ -15,7 +15,13 @@ error_reporting(E_ALL);
 $host = getenv('MYSQLHOST') ?: 'localhost';
 $user = getenv('MYSQLUSER') ?: 'root';
 $pass = getenv('MYSQLPASSWORD') ?: '';
-$db = getenv('MYSQLDATABASE') ?: 'electricity_tracker';
+
+// Automatically detect if we are on Railway (where default DB is 'railway') or local XAMPP
+$db = getenv('MYSQLDATABASE');
+if (!$db) {
+    $db = getenv('MYSQLHOST') ? 'railway' : 'electricity_tracker';
+}
+
 $port = getenv('MYSQLPORT') ? (int)getenv('MYSQLPORT') : 3306;
 
 try {
