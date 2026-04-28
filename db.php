@@ -11,18 +11,27 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Database configuration with fallback for local XAMPP vs Live Server (Railway)
-$host = getenv('MYSQLHOST') ?: 'localhost';
-$user = getenv('MYSQLUSER') ?: 'root';
-$pass = getenv('MYSQLPASSWORD') ?: '';
-
-// Automatically detect if we are on Railway (where default DB is 'railway') or local XAMPP
-$db = getenv('MYSQLDATABASE');
-if (!$db) {
-    $db = getenv('MYSQLHOST') ? 'railway' : 'electricity_tracker';
+// Helper function to safely get environment variables across different server configs
+function get_env_var($key, $default = '') {
+    $val = getenv($key);
+    if ($val !== false && $val !== '') return $val;
+    if (isset($_ENV[$key]) && $_ENV[$key] !== '') return $_ENV[$key];
+    if (isset($_SERVER[$key]) && $_SERVER[$key] !== '') return $_SERVER[$key];
+    return $default;
 }
 
-$port = getenv('MYSQLPORT') ? (int)getenv('MYSQLPORT') : 3306;
+// Database configuration with fallback for local XAMPP vs Live Server (Railway)
+$host = get_env_var('MYSQLHOST', 'localhost');
+$user = get_env_var('MYSQLUSER', 'root');
+$pass = get_env_var('MYSQLPASSWORD', '');
+
+// Automatically detect if we are on Railway (where default DB is 'railway') or local XAMPP
+$db = get_env_var('MYSQLDATABASE');
+if (!$db) {
+    $db = get_env_var('MYSQLHOST') ? 'railway' : 'electricity_tracker';
+}
+
+$port = get_env_var('MYSQLPORT') ? (int)get_env_var('MYSQLPORT') : 3306;
 
 try {
     // Create connection using the port
