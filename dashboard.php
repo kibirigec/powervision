@@ -39,7 +39,7 @@ $stmt_apps->execute();
 $appliances = $stmt_apps->get_result();
 
 // 3. Get recent usage logs
-$sql_logs = "SELECT a.name, l.hours_used, l.log_date, ((a.watts * l.hours_used) / 1000) as kwh_used 
+$sql_logs = "SELECT l.id, a.name, l.hours_used, l.log_date, ((a.watts * l.hours_used) / 1000) as kwh_used 
              FROM usage_logs l 
              JOIN appliances a ON l.appliance_id = a.id 
              WHERE a.user_id = ? 
@@ -136,6 +136,7 @@ $logs = $stmt_logs->get_result();
             <a href="dashboard.php" style="color: var(--primary);">Dashboard</a>
             <a href="add_appliance.php">Appliances</a>
             <a href="log_usage.php">Log Usage</a>
+            <a href="profile.php">Profile</a>
             <a href="logout.php">Logout (<?php echo htmlspecialchars($_SESSION['user_name']); ?>)</a>
         </div>
     </nav>
@@ -174,6 +175,7 @@ $logs = $stmt_logs->get_result();
                         <tr>
                             <th>Name</th>
                             <th>Watts</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -181,6 +183,10 @@ $logs = $stmt_logs->get_result();
                             <tr>
                                 <td><?php echo htmlspecialchars($app['name'] ?? $app['NAME'] ?? ''); ?></td>
                                 <td><?php echo $app['watts']; ?> W</td>
+                                <td>
+                                    <a href="edit_appliance.php?id=<?php echo $app['id']; ?>" style="color: var(--muted); font-size: 0.8rem; margin-right: 0.5rem;">Edit</a>
+                                    <a href="delete_appliance.php?id=<?php echo $app['id']; ?>" style="color: #ef4444; font-size: 0.8rem;" onclick="return confirm('Delete this appliance and all its logs?')">Delete</a>
+                                </td>
                             </tr>
                         <?php endwhile; ?>
                         <?php if($appliances->num_rows == 0): ?>
@@ -200,6 +206,7 @@ $logs = $stmt_logs->get_result();
                             <th>Appliance</th>
                             <th>Hours</th>
                             <th>kWh</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -208,6 +215,9 @@ $logs = $stmt_logs->get_result();
                                 <td><?php echo htmlspecialchars($log['name'] ?? $log['NAME'] ?? ''); ?></td>
                                 <td><?php echo $log['hours_used']; ?>h</td>
                                 <td><?php echo number_format($log['kwh_used'], 2); ?></td>
+                                <td>
+                                    <a href="delete_log.php?id=<?php echo $log['id']; ?>" style="color: #ef4444; font-size: 0.8rem;" onclick="return confirm('Delete this usage log?')">Delete</a>
+                                </td>
                             </tr>
                         <?php endwhile; ?>
                         <?php if($logs->num_rows == 0): ?>

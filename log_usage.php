@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="dashboard.php">Dashboard</a>
             <a href="add_appliance.php">Appliances</a>
             <a href="log_usage.php">Log Usage</a>
+            <a href="profile.php">Profile</a>
             <a href="logout.php">Logout</a>
         </div>
     </nav>
