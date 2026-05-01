@@ -63,69 +63,72 @@ $logs = $stmt_logs->get_result();
             background: #111;
             color: white;
             border-radius: 24px;
-            padding: 3rem;
+            padding: 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 48px;
+            margin-bottom: 32px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         .dark-card-header h3 {
-            font-size: 2.2rem;
+            font-size: 35px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             color: white;
         }
         .dark-card-header p { color: #999; }
         .dark-stats { display: flex; flex-direction: column; justify-content: center; }
-        .stat-large { margin-bottom: 2rem; }
+        .stat-large { margin-bottom: 32px; }
         .stat-large h4 {
-            font-size: 3rem;
+            font-size: 48px;
             color: #22c55e;
             line-height: 1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
-        .stat-large p { color: #999; font-size: 0.9rem; }
-        .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .stat-small h4 { font-size: 1.8rem; margin-bottom: 0.5rem; color: white; }
-        .stat-small p { color: #999; font-size: 0.85rem; }
+        .stat-large p { color: #999; font-size: 14px; }
+        .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .stat-small h4 { font-size: 29px; margin-bottom: 8px; color: white; }
+        .stat-small p { color: #999; font-size: 14px; }
         
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 24px;
         }
         .box-light {
             background: white;
             border-radius: 16px;
-            padding: 2rem;
+            padding: 32px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border: 1px solid #eee;
         }
         .box-light h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 21px;
+            margin-bottom: 24px;
             color: #111;
+        }
+        .box-light a {
+            margin-top: 16px;
         }
         .pill-outline-dark {
             display: inline-block;
             border: 1px solid #ccc;
-            padding: 0.5rem 1.2rem;
+            padding: 8px 19px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 14px;
             color: #111;
             text-decoration: none;
             transition: all 0.2s;
-            margin-top: 1rem;
+            margin-top: 16px;
         }
         .pill-outline-dark:hover {
             background: #f4f4f4;
         }
         
         @media(max-width: 768px) {
-            .dark-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+            .dark-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
             .bottom-grid { grid-template-columns: 1fr; }
-            .stat-row { grid-template-columns: 1fr; gap: 1.5rem; }
+            .stat-row { grid-template-columns: 1fr; gap: 24px; }
         }
     </style>
 </head>
@@ -194,7 +197,7 @@ $logs = $stmt_logs->get_result();
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <a href="add_appliance.php" class="pill-outline-dark mt-1">Add New Appliance →</a>
+                <a href="add_appliance.php" style="margin-top: 16px;">Add New Appliance →</a>
             </div>
 
             <!-- Recent Logs -->
@@ -225,7 +228,7 @@ $logs = $stmt_logs->get_result();
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <a href="log_usage.php" class="pill-outline-dark mt-1">Log Daily Usage →</a>
+                <a href="log_usage.php" style="margin-top: 16px;">Log Daily Usage →</a>
             </div>
         </div>
     </div>

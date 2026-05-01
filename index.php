@@ -73,10 +73,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn">Login</button>
         </form>
         
-        <p class="mt-1 text-center">
+        <p>
             Don't have an account? <a href="register.php">Register here</a>
         </p>
-        <p class="text-center"><a href="home.php">Back to Home</a></p>
+        <p><a href="home.php">Back to Home</a></p>
     </div>
 </body>
 </html>

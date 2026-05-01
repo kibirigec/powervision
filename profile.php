@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
 
-        <p class="text-center mt-1"><a href="dashboard.php">Back to Dashboard</a></p>
+        <p><a href="dashboard.php">Back to Dashboard</a></p>
     </div>
 </body>
 </html>
